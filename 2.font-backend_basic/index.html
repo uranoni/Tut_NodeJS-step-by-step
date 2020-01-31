@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sendDate()">qweqwe</button>
+    <script language="javascript">
+        function sendDate() {
+        var url = 'http://localhost:3000/good';
+        let myHeaders = new Headers({
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+        });
+
+        fetch(url, {
+        method: 'POST', // or 'PUT'
+        body:JSON.stringify({good:"hello werwere"}), // data can be `string` or {object}!
+        headers: myHeaders,
+        mode: 'cors'
+        }).then(res => res)
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+        }
+        </script>
+</body>
+</html>
